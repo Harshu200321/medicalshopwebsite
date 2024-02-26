@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Buying Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .product {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .product img {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1></h1>
+        <div class="product">
+            <img src="bournvita.jfif" alt="BournVita">
+            <div class="product-details">
+                <h2>BournVita</h2>
+                <p>Good For born Strength & rich nutrients of vitamin D</p>
+                <p>Price: $50</p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <p>Total Price: <span id="totalPrice">$50</span></p>
+                <button onclick="buyProduct()">Buy Now</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function buyProduct() {
+            let quantity = document.getElementById("quantity").value;
+            let price = 50; // Price per unit
+            let totalPrice = quantity * price;
+            document.getElementById("totalPrice").textContent = "$" + totalPrice;
+            alert("Thank you for buying! Total Price: $" + totalPrice);
+            // Redirect to order.html after clicking Buy Now
+            window.location.href = "order.html";
+        }
+    </script>
+</body>
+</html>
